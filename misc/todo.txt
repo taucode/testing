@@ -1,3 +1,7 @@
 ﻿2021-04-22
 ==========
-    1. Deploy initial version to prod.
++   1. Deploy initial version to prod.
+
+2022-07-28
+==========
+    1. Resolve 'obsolete' issues from FluentValidation.
