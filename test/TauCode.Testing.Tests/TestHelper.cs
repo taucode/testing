@@ -1,26 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using TauCode.Testing.Tests.Core;
+﻿using TauCode.Testing.Tests.Core;
 
-namespace TauCode.Testing.Tests
+namespace TauCode.Testing.Tests;
+
+internal static class TestHelper
 {
-    internal static class TestHelper
+    internal static Guid? ToNullableGuid(this string guidString)
     {
-        internal static Guid? ToNullableGuid(this string guidString)
+        if (guidString == null)
         {
-            if (guidString == null)
-            {
-                return null;
-            }
-
-            return new Guid(guidString);
+            return null;
         }
 
-        public static IList<string> GetPredefinedCurrencyCodes() =>
-            DataConstants.Currency.PredefinedCurrenciesByCode.Keys.ToList();
-
-        public static IList<long> GetPredefinedCurrencyIds() =>
-            DataConstants.Currency.PredefinedCurrenciesById.Keys.ToList();
+        return new Guid(guidString);
     }
+
+    public static IList<string> GetPredefinedCurrencyCodes() =>
+        DataConstants.Currency.PredefinedCurrenciesByCode.Keys.ToList();
+
+    public static IList<long> GetPredefinedCurrencyIds() =>
+        DataConstants.Currency.PredefinedCurrenciesById.Keys.ToList();
 }

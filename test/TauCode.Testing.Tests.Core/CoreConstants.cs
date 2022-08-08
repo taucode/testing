@@ -1,8 +1,7 @@
-﻿namespace TauCode.Testing.Tests.Core
+﻿namespace TauCode.Testing.Tests.Core;
+
+internal class CoreConstants
 {
-    internal class CoreConstants
-    {
-        internal static readonly int MaxSystemWatcherCodeLength = 50;
-        internal const long NullLongId = 0L;
-    }
+    internal static readonly int MaxSystemWatcherCodeLength = 50;
+    internal const long NullLongId = 0L;
 }

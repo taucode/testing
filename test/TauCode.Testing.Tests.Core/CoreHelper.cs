@@ -1,15 +1,12 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using TauCode.Testing.Tests.Core.Features;
+﻿using TauCode.Testing.Tests.Core.Features;
 
-namespace TauCode.Testing.Tests.Core
+namespace TauCode.Testing.Tests.Core;
+
+internal static class CoreHelper
 {
-    internal static class CoreHelper
+    internal static bool UniqueCurrencyCodes(IList<SetupSystemCurrencyRate> currencyRates)
     {
-        internal static bool UniqueCurrencyCodes(IList<SetupSystemCurrencyRate> currencyRates)
-        {
-            var codes = currencyRates.Select(x => x?.CurrencyCode).ToList();
-            return codes.Count == codes.Distinct().ToList().Count;
-        }
+        var codes = currencyRates.Select(x => x?.CurrencyCode).ToList();
+        return codes.Count == codes.Distinct().ToList().Count;
     }
 }
