@@ -1,29 +1,27 @@
-﻿using System.Collections.Generic;
-using FluentValidation;
+﻿using FluentValidation;
 using TauCode.Extensions;
 
-namespace TauCode.Testing.Tests.Core.Features.Watchers.ChangeWatcherBasicCurrency
+namespace TauCode.Testing.Tests.Core.Features.Watchers.ChangeWatcherBasicCurrency;
+
+public class ChangeWatcherBasicCurrencyCommandValidator :
+    AbstractValidator<ChangeWatcherBasicCurrencyCommand>,
+    IParameterValidator
 {
-    public class ChangeWatcherBasicCurrencyCommandValidator :
-        AbstractValidator<ChangeWatcherBasicCurrencyCommand>,
-        IParameterValidator
+    public ChangeWatcherBasicCurrencyCommandValidator()
     {
-        public ChangeWatcherBasicCurrencyCommandValidator()
-        {
-            this.CascadeMode = CascadeMode.Stop;
+        this.CascadeMode = CascadeMode.Stop;
 
-            this.RuleFor(x => this.GetWatcherId())
-                .LongId()
-                .NotEqual(DataConstants.SystemWatcher.DefaultSystemWatcherId)
-                .WithName(nameof(ChangeWatcherBasicCurrencyCommand.WatcherId));
+        this.RuleFor(x => this.GetWatcherId())
+            .LongId()
+            .NotEqual(DataConstants.SystemWatcher.DefaultSystemWatcherId)
+            .WithName(nameof(ChangeWatcherBasicCurrencyCommand.WatcherId));
 
-            this.RuleFor(x => x.CurrencyCode)
-                .CurrencyCode();
-        }
-
-        private long GetWatcherId() =>
-            this.Parameters?.GetDictionaryValueOrDefault("watcherId") as long? ?? CoreConstants.NullLongId;
-
-        public IDictionary<string, object> Parameters { get; set; } = new Dictionary<string, object>();
+        this.RuleFor(x => x.CurrencyCode)
+            .CurrencyCode();
     }
+
+    private long GetWatcherId() =>
+        this.Parameters?.GetDictionaryValueOrDefault("watcherId") as long? ?? CoreConstants.NullLongId;
+
+    public IDictionary<string, object> Parameters { get; set; } = new Dictionary<string, object>();
 }
