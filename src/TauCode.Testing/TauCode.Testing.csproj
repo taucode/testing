@@ -7,9 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="FluentValidation" Version="11.2.0" />
+    <PackageReference Include="FluentValidation" Version="11.4.0" />
     <PackageReference Include="NUnit" Version="3.13.3" />
-    <PackageReference Include="TauCode.Extensions" Version="1.5.5-alpha.1.2022-08-11.23-27" />
+    <PackageReference Include="TauCode.Extensions" Version="1.7.0" />
   </ItemGroup>
 
 </Project>
