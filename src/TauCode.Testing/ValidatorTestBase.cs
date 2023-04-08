@@ -26,7 +26,7 @@ public abstract class ValidatorTestBase<T, TValidator> where TValidator : IValid
             throw new InvalidOperationException($"No parameterless constructor defined for type '{typeof(TValidator).FullName}'.");
         }
 
-        var validator = (TValidator)ctor.Invoke(new object[0]);
+        var validator = (TValidator)ctor.Invoke(Array.Empty<object>());
         return validator;
     }
 

@@ -22,7 +22,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\TauCode.Testing\TauCode.Testing.csproj" />
     <ProjectReference Include="..\TauCode.Testing.Tests.Core\TauCode.Testing.Tests.Core.csproj" />
   </ItemGroup>
 
