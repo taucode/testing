@@ -21,7 +21,7 @@ public class SetSystemWatcherQuotesCommandValidatorTests : ValidatorTestBase<
     [Test]
     [TestCase(null)]
     [TestCase("2012-01-02Z")]
-    public void Command_IsValid_RunsOk(string dateString)
+    public void Command_IsValid_RunsOk(string? dateString)
     {
         // Arrange
         var date = dateString.ToNullableUtcDateOffset();
@@ -143,7 +143,7 @@ public class SetSystemWatcherQuotesCommandValidatorTests : ValidatorTestBase<
     [TestCase("EURO", Description = "Not 3 symbols")]
     [TestCase("USd", Description = "Not all upper-case")]
     [TestCase("RB.", Description = "Not all letters")]
-    public void CurrencyRates_CurrencyCodeIsInvalid_Error(string code)
+    public void CurrencyRates_CurrencyCodeIsInvalid_Error(string? code)
     {
         // Arrange
         var command = this.CreateInstance();

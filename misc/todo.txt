@@ -1,12 +1,12 @@
-2021-04-22
+2022-08-08
 ==========
-+   1. Deploy initial version to prod.
+    1. Define destiny of taucode.cqrs.testing (+nuget.org, +dev.azure.com)
 
 2022-07-28
 ==========
     1. Resolve 'obsolete' issues from FluentValidation.
 
-2022-08-08
+2021-04-22
 ==========
-    1. Define destiny of taucode.cqrs.testing (+nuget.org, +dev.azure.com)
++   1. Deploy initial version to prod.
 

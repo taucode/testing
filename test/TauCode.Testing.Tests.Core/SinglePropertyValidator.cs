@@ -3,6 +3,8 @@ using FluentValidation.Validators;
 using System.Reflection;
 using System.Text;
 
+// todo: what? huge copy-paste from TauCode.Validation!
+
 namespace TauCode.Testing.Tests.Core;
 
 public abstract class SinglePropertyValidator<T> : AbstractValidator<T>
